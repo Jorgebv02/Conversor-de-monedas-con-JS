@@ -1,0 +1,118 @@
+<!-- 
+Código fuente: folder monedas
+Versión: 1.0
+Fecha de creación: 12/dic/2018
+Última actualización: N/A.
+Autores: Jorge Barquero Villalobos,
+         basado en la Prof. Ericka Solano Fernández.
+Descripción: apliación web que permite la transformación de divisas.
+Notas:
+Gracias a Juan Diego Escobar Sánchez por la información suministrada, 
+link de Github de Juan Diego: https://github.com/JuanEscobar066
+-->
+<!DOCTYPE html>
+<html lang="es">
+
+    <!--  Configuration. -->
+    <head>
+        <title>Cambio de divisas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" type="text/css"> 
+        <link rel="stylesheet" href="css/styles.css">       
+    </head>
+
+    <body>
+        
+        <!--Contents-->
+        <div>
+            <!--Navbar-->
+            <nav class="navbar " id="navbar">                
+                <div class=col-md-12>
+                    <img src="img/logo.png" alt="" class="menu-bar">
+                    <span class="navbar-brand mb-2 h1">Cambio de divisas.</span>
+                </div>
+            </nav>
+            <!--/Navbar-->
+
+            <!--Contents-->
+            <div class="contents">                            
+                <h1>La solución mas rápida en casa.</h1><br>                       
+                <br><h4>La aplicación permite hacer conversiones de una moneda a otra de una manera sencilla.</h4><br>
+                <div class="row">
+                    <!--Currency to be converted-->
+                    <div class="form-group col-md-3" style="width: 350px">
+                        <label for="currencies1">Yo tengo esta moneda:</label>
+                        <select class="form-control currenciesBox" id="currencies1">
+                            <!--Currencies are added here from a js function.-->
+                        </select>
+                        <br>
+                        <input id="inputAmount1" value="Cantidad" type="text" class="form-control" style="text-align:right;color: gray;" onclick="if(this.value=='Amount') this.value=''" onblur="if(this.value=='') this.value='Amount'">
+                        <br>
+                    </div>
+
+                    <!--Currency converted-->
+                    <div style="padding-top: 65px"><img src="img/conversion.jpg" alt=""><br></div>
+                    <div class="form-group col-md-3" style="width: 350px">
+                        <label for="currencies2">Yo deseo convertir a esta:</label>
+                        <select class="form-control currenciesBox" id="currencies2">
+                            <!--Currencies are added here from a js function.-->
+                        </select>
+                        <br>
+                        <input id="inputAmount2" value="Resultado" type="text" class="form-control" style="text-align:right;color: gray;" onclick="if(this.value=='Result') this.value=''" onblur="if(this.value=='') this.value='Result'">
+                        <br>
+                    </div>
+                </div>
+
+                <div class="row">                
+                    <div class="form-group col-md-12" style="width: 350px">
+                        <br><h4>Convierte los colones que tiene de la manera más fácil.</h4><br>
+                        <input id="inputAmountFav" value="Cantidad" type="text" class="form-control" style="text-align:right; width: 350px;color: gray;" onclick="if(this.value=='Amount') this.value=''" onblur="if(this.value=='') this.value='Amount'">
+                    </div>
+
+                    <div class="col-xs-6">
+                        <h3 class="text-center">Basic Example</h3>
+                          <div class="well" style="max-height: 300px;overflow: auto;">
+                          <ul class="list-group checked-list-box">
+                          <li class="list-group-item">Cras justo odio</li>
+                          <li class="list-group-item" data-checked="true">Dapibus ac facilisis in</li>
+                          <li class="list-group-item">Morbi leo risus</li>
+                          <li class="list-group-item">Porta ac consectetur ac</li>
+                          <li class="list-group-item">Vestibulum at eros</li>
+                          <li class="list-group-item">Cras justo odio</li>
+                          <li class="list-group-item">Dapibus ac facilisis in</li>
+                          <li class="list-group-item">Morbi leo risus</li>
+                          <li class="list-group-item">Porta ac consectetur ac</li>
+                          <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                    </div>
+        </div>
+
+                    <!--Table-->
+                    <div id="results" class="col-md-5 table-responsive" style="overflow-y: auto; height: 350px">
+                        <table class="table table-striped" id="tableResults">
+                            <thead id="tblHead">
+                                <tr>
+                                    <th>Bandera</th>
+                                    <th>Códio</th>
+                                    <th>Nombre</th>
+                                    <th>Conversión</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tblBody">
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--/Table-->
+
+                </div>
+            </div>
+        </div>    
+        <!--/Contents-->
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="js/options.js"></script>
+    </body>
+</html>
